@@ -60,6 +60,7 @@ local buttonNames = {
     "Activar pegar muerto",
     "Auto Kill a todos",
     "Auto Kill a jugadores",
+    "Auto Reset",
     "Espectear"
 }
 
@@ -363,6 +364,17 @@ end)
 -- Botón "Activar pegar muerto" que carga raw externa
 buttons["Activar pegar muerto"].MouseButton1Click:Connect(function()
     local url = "https://raw.githubusercontent.com/PheonixHub/Script-combinando-kill/refs/heads/main/Script%20para%20no%20comer%20eggs"
+    local success, response = pcall(function()
+        return game:HttpGet(url)
+    end)
+    if success and response then
+        loadstring(response)()
+    else
+        warn("Error cargando script 'Activar pegar muerto'")
+    end
+end)
+buttons["Auto Reset"].MouseButton1Click:Connect(function()
+    local url = "https://raw.githubusercontent.com/MainScriptMl/Auto-reinciar-personaje/refs/heads/main/Auto%20reinicio"
     local success, response = pcall(function()
         return game:HttpGet(url)
     end)
