@@ -41,7 +41,7 @@ local titleButton = Instance.new("TextButton")
 titleButton.Size = UDim2.new(1,0,1,0)
 titleButton.BackgroundTransparency = 1
 titleButton.Text = "Auto Kill V2"
-titleButton.TextColor3 = Color3.fromRGB(0,255,255)
+titleButton.TextColor3 = Color3.fromRGB(255,255,255)
 titleButton.Font = Enum.Font.GothamBold
 titleButton.TextSize = 20
 titleButton.TextXAlignment = Enum.TextXAlignment.Center
@@ -72,7 +72,7 @@ for _, name in ipairs(buttonNames) do
     btn.Position = UDim2.new(0,20,0,yPosition)
     btn.BackgroundColor3 = Color3.fromRGB(40,40,40)
     btn.Text = name
-    btn.TextColor3 = Color3.fromRGB(0,255,255)
+    btn.TextColor3 = Color3.fromRGB(255,255,255)
     btn.Font = Enum.Font.Gotham
     btn.TextSize = 18
     btn.Parent = buttonContainer
@@ -96,7 +96,7 @@ autoKillPanel.Parent = mainFrame
 local titleAK = Instance.new("TextLabel")
 titleAK.Size = UDim2.new(1,0,0,30)
 titleAK.BackgroundColor3 = Color3.fromRGB(50,50,50)
-titleAK.Text = "☠️ AutoKill Selector"
+titleAK.Text = "Selecionar Jugador kill"
 titleAK.TextColor3 = Color3.fromRGB(255,255,255)
 titleAK.Font = Enum.Font.SourceSansBold
 titleAK.TextSize = 20
@@ -363,17 +363,6 @@ end)
 -- Botón "Activar pegar muerto" que carga raw externa
 buttons["Activar pegar muerto"].MouseButton1Click:Connect(function()
     local url = "https://raw.githubusercontent.com/PheonixHub/Script-combinando-kill/refs/heads/main/Script%20para%20no%20comer%20eggs"
-    local success, response = pcall(function()
-        return game:HttpGet(url)
-    end)
-    if success and response then
-        loadstring(response)()
-    else
-        warn("Error cargando script 'Activar pegar muerto'")
-    end
-end)
-buttons["Auto Reset"].MouseButton1Click:Connect(function()
-    local url = "https://raw.githubusercontent.com/MainScriptMl/Auto-reinciar-personaje/refs/heads/main/Auto%20reinicio"
     local success, response = pcall(function()
         return game:HttpGet(url)
     end)
