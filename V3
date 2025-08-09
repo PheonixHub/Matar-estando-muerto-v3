@@ -375,7 +375,7 @@ end)
 
 -- Botón "Auto Kill a todos" que carga raw externa
 buttons["Auto Kill a todos"].MouseButton1Click:Connect(function()
-    local url = "https://raw.githubusercontent.com/PheonixHub/Auto-kill-all-/refs/heads/main/Auto%20kill%20para%20todos"
+    local url = "https://raw.githubusercontent.com/demonmisterio45-ux/Auto-kill-para-todos/refs/heads/main/All"
     local success, response = pcall(function()
         return game:HttpGet(url)
     end)
